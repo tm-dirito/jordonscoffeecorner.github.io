@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+@font-face {
+    font-family: 'zeyadaregular';
+    src: url('zeyada-regular-webfont.woff2') format('woff2'),
+         url('zeyada-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 section {
   padding: 20px;
   margin-bottom: 20px;
@@ -8,7 +14,7 @@ section {
   border: 1px solid black;
 }
 .zeyada-regular {
-  font-family: "Zeyada", cursive;
+  font-family: 'zeyadaregular';
   font-weight: 400;
   font-style: normal;
 }
