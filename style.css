@@ -6,6 +6,11 @@ section {
   background: linear-gradient(to right, #eee, #fafafa);
   border: 1px solid black;
 }
+.zeyada-regular {
+  font-family: "Zeyada", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 .left-aligned {
   text-align: left;
       }
