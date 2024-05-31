@@ -4,6 +4,7 @@ section {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background: linear-gradient(to right, #eee, #fafafa);
+  border: 1px solid black;
 }
 .left-aligned {
   text-align: left;
