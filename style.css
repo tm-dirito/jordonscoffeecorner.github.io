@@ -17,7 +17,7 @@ section {
     font-family: 'zeyadaregular';
     font-weight: 400;
     font-style: normal;
-    font-size: 60pt;
+    font-size: 40pt;
 }
 .left-aligned {
   text-align: left;
@@ -57,7 +57,7 @@ img {
 p {
   line-height: 1.5;
   margin-bottom: 1em;
-  font-size: 12px;
+  font-size: 15pt;
 }
 button {
   background-color: blue;
