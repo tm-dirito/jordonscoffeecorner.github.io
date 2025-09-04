@@ -1,135 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial scale=1.0">
-    <title>Jordon's Coffee Corner</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-<body>
-   <section>
-      <h1 class="zeyada-regular" style="text-align: center;">Jordon's Coffee Corner</h1>
-      <h2 class="centered">Welcome to Jordon's Coffee Corner! Explore the menu options below</h2>
-    </section>
-  
- <section style="display: flex; align-items: center">
-  <div style="flex: 1; text-align: center;">  <h2 class="zeyada-regular">Double Espresso</h2>
-    <p>A strong and intense shot of espresso, perfect for those who need a quick and powerful caffeine boost.</p>
-  </div>
-  <div style="flex: 1; text-align: center;">  <h2></h2>
-    <img src="de.jpg" alt="espresso pic" style="max-width: 100%; margin: 0 auto;">
-  </div>
-</section>
-  
-  <section style="display: flex;">
-  <div style="flex: 1; text-align: center;">  <h2 class="zeyada-regular">Cortado</h2>
-    <p>2oz espresso shot and 2oz steamed milk, creating a smooth and balanced drink with a thin layer of foam.</p>
-  </div>
-  <div style="flex: 1; text-align: center;">  <h2></h2>
-    <img src="CORTADO.jpg" alt="cortado pic" style="max-width: 100%; margin: 0 auto;">
-  </div>
-</section>
-  
-  <section style="display: flex;">
-  <div style="flex: 1; text-align: center;">  <h2 class="zeyada-regular">Cappuccino</h2>
-    <p>Espresso drink made with 2oz espresso, 4oz steamed milk, offering a balance of coffee flavor and creamy texture.</p>
-  </div>
-  <div style="flex: 1; text-align: center;">  <h2></h2>
-    <img src="cappucinoUSE.jpg" alt="cappuccino pic" style="max-width: 100%;">
-  </div>
-</section>
-  
-  <section style="display: flex;">
-  <div style="flex: 1; text-align: center;">  <h2 class="zeyada-regular">Latte</h2>
-    <p>Made with 2oz espresso and 6oz steamed milk, with a small amount of milk foam on top. Lattes offer a milder coffee flavor than straight espresso.</p>
-  </div>
-  <div style="flex: 1; text-align: center;">  <h2></h2>
-    <img src="latte.jpg" alt="latte pic" style="max-width: 100%;">
-  </div>
-</section>
-  
-  <section style="display: flex;">
-  <div style="flex: 1; text-align: center;">  <h2 class="zeyada-regular">Iced Latte</h2>
-    <p>A refreshing latte served over ice, perfect for a hot day.</p>
-  </div>
-  <div style="flex: 1; text-align: center;">  <h2></h2>
-    <img src="icedLatte.jpg" alt="iced latte pic" style="max-width: 100%;">
-  </div>
-</section>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Coffee Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
 
-  <section style="display: flex;">
-  <div style="flex: 1; text-align: center;">  <h2 class="zeyada-regular">Americano</h2>
-    <p>Espresso diluted with hot water, creating a lighter and more tea-like coffee drink compared to straight espresso.</p>
-  </div>
-  <div style="flex: 1; text-align: center;">  <h2></h2>
-    <img src="americano.jpg" alt="americano pic" style="max-width: 100%;">
-  </div>
-</section>
+    <div id="app" class="container mx-auto p-4 md:p-8 max-w-4xl">
+        <header class="text-center mb-8">
+            <h1 class="text-5xl font-bold text-amber-900 tracking-tight">Coffee Menu</h1>
+            <p class="text-gray-600 mt-2">Handcrafted coffee, just for you.</p>
+        </header>
 
-  <section style="display: flex;">
-  <div style="flex: 1; text-align: center;">  <h2 class="zeyada-regular">Iced Americano w/ Cold Foam</h2>
-    <p>A twist on the classic Americano, topped with a layer of cold, frothed foam for a unique texture.</p>
-  </div>
-  <div style="flex: 1; text-align: center;">  <h2></h2>
-    <img src="americanoColdFoam.jpg" alt="americano w/ cold foam pic" style="max-width: 100%;">
-  </div>
-</section>
+        <!-- Coffee Menu Section -->
+        <main id="menu-section" class="bg-white p-6 rounded-2xl shadow-lg">
+            <h2 class="text-3xl font-semibold text-amber-800 border-b-2 border-amber-200 pb-3 mb-6">Our Drinks</h2>
+            <div id="menu-items" class="grid md:grid-cols-2 gap-8">
+                <!-- Coffee items will be injected here by JavaScript -->
+                 <div class="flex flex-col p-4 bg-amber-50 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-bold text-amber-900">Caramel Macchiato</h3>
+                    <p class="text-gray-600 mt-1 flex-grow">A classic blend of espresso, steamed milk, and rich caramel syrup.</p>
+                    <div class="mt-3">
+                        <span class="inline-block bg-amber-200 text-amber-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded-full">Espresso</span>
+                        <span class="inline-block bg-amber-200 text-amber-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded-full">Caramel</span>
+                    </div>
+                </div>
+                 <div class="flex flex-col p-4 bg-amber-50 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-bold text-amber-900">Vanilla Latte</h3>
+                    <p class="text-gray-600 mt-1 flex-grow">Smooth espresso with creamy steamed milk and a sweet vanilla finish.</p>
+                     <div class="mt-3">
+                        <span class="inline-block bg-amber-200 text-amber-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded-full">Espresso</span>
+                        <span class="inline-block bg-amber-200 text-amber-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded-full">Vanilla</span>
+                    </div>
+                </div>
+                 <div class="flex flex-col p-4 bg-amber-50 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-bold text-amber-900">Iced Mocha</h3>
+                    <p class="text-gray-600 mt-1 flex-grow">Chilled espresso, milk, and chocolate syrup served over ice. A perfect cool-down treat.</p>
+                     <div class="mt-3">
+                        <span class="inline-block bg-amber-200 text-amber-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded-full">Espresso</span>
+                        <span class="inline-block bg-amber-200 text-amber-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded-full">Chocolate</span>
+                    </div>
+                </div>
+            </div>
+             <div id="no-items-message" class="hidden text-center py-10">
+                <p class="text-gray-500">The coffee menu is currently empty. The barista is getting ready!</p>
+            </div>
+        </main>
 
-   <section style="display: flex;">
-  <div style="flex: 1; text-align: center;">  <h2 class="zeyada-regular">Espresso Tonic</h2>
-    <p>A bubbly and refreshing drink made with espresso, tonic water, and ice.</p>
-  </div>
-  <div style="flex: 1; text-align: center;">  <h2></h2>
-    <img src="espressoTonic.jpg" alt="espresso tonic pic" style="max-width: 100%;">
-  </div>
-</section>
+        <!-- Admin Login Button -->
+        <div class="text-center mt-8">
+            <button id="admin-login-btn" class="bg-amber-800 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-900 transition-colors shadow-md">
+                Admin Login
+            </button>
+        </div>
 
-  <section style="display: flex;">
-  <div style="flex: 1; text-align: center;">  <h2 class="zeyada-regular">Affogato</h2>
-    <p>A delightful dessert coffee made with a scoop of vanilla ice cream topped with a shot of hot espresso.</p>
-  </div>
-  <div style="flex: 1; text-align: center;">  <h2></h2>
-    <img src="affogato.jpg" alt="affogato pic" style="max-width: 100%;">
-  </div>
-</section>
+        <!-- Admin Panel (hidden by default) -->
+        <div id="admin-panel" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+            <div class="bg-white w-full max-w-2xl rounded-2xl shadow-2xl transform transition-all" id="admin-modal-content">
 
-  <section style="display: flex;">
-  <div style="flex: 1; text-align: center;">  <h2 class="zeyada-regular">Brown Sugar Latte w/ Olive Oil</h2>
-    <p>A unique latte variation that combines the sweetness of brown sugar with the savory richness of olive oil, creating a complex and flavorful drink.</p>
-  </div>
-  <div style="flex: 1; text-align: center;">  <h2></h2>
-    <img src="brownSugar.jpg" alt="brown sugar latte pic" style="max-width: 100%;">
-  </div>
-</section>
+                 <!-- Login View -->
+                <div id="login-view">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold text-center text-amber-900 mb-6">Admin Access</h2>
+                        <div class="space-y-4">
+                             <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                <input type="email" id="email" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500">
+                            </div>
+                            <div>
+                                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                                <input type="password" id="password" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500">
+                            </div>
+                        </div>
+                         <div class="mt-6 flex justify-end space-x-3">
+                            <button id="close-login-btn" class="bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors">Cancel</button>
+                            <button id="login-btn" class="bg-amber-800 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-900 transition-colors">Login</button>
+                        </div>
+                        <p id="login-error" class="text-red-500 text-sm mt-4 text-center"></p>
+                    </div>
+                </div>
 
-   <section style="display: flex;">
-  <div style="flex: 1; text-align: center;">  <h2 class="zeyada-regular">Steamer</h2>
-    <p>Hot, steamed milk flavored with your choice of syrups or powders. A perfect option for those who enjoy a milky coffee drink without the strong coffee flavor.</p>
-  </div>
-  <div style="flex: 1; text-align: center;">  <h2></h2>
-    <img src="steamer1.jpg" alt="steamer pic" style="max-width: 100%;">
-  </div>
-</section>
+                <!-- Logged In View -->
+                <div id="loggedin-view" class="hidden">
+                    <div class="p-8">
+                         <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-2xl font-bold text-amber-900">Manage Menu</h2>
+                            <button id="logout-btn" class="bg-red-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-700 transition-colors">Logout</button>
+                        </div>
 
-   <section style="display: flex;">
-  <div style="flex: 1; text-align: center;">  <h2 class="zeyada-regular">S'mores Latte</h2>
-    <p>A decadent latte flavored with chocolate syrup, graham cracker infused steamed milk, & topped with toasted marshmallows for a taste of the classic campfire treat.
-</p>
-  </div>
-  <div style="flex: 1; text-align: center;">  <h2></h2>
-    <img src="smores.jpg" alt="smores pic" style="max-width: 100%;">
-  </div>
-</section>
+                        <!-- Add/Edit Form -->
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-inner">
+                             <h3 id="form-title" class="text-xl font-semibold text-amber-800 mb-4">Add New Coffee</h3>
+                             <form id="menu-form" class="space-y-4">
+                                <input type="hidden" id="edit-id">
+                                <div>
+                                    <label for="coffee-name" class="block text-sm font-medium text-gray-700">Name</label>
+                                    <input type="text" id="coffee-name" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500">
+                                </div>
+                                <div>
+                                    <label for="coffee-description" class="block text-sm font-medium text-gray-700">Description</label>
+                                    <textarea id="coffee-description" rows="3" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500"></textarea>
+                                </div>
+                                 <div>
+                                    <label for="coffee-tags" class="block text-sm font-medium text-gray-700">Tags (comma-separated)</label>
+                                    <input type="text" id="coffee-tags" placeholder="e.g., Espresso, Caramel, Iced" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500">
+                                </div>
+                                <div class="flex justify-end space-x-3">
+                                    <button type="button" id="cancel-edit-btn" class="hidden bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors">Cancel</button>
+                                    <button type="submit" class="bg-amber-800 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-900 transition-colors">Save Item</button>
+                                </div>
+                            </form>
+                        </div>
 
-  <section>
-      <h1 class="zeyada-regular" style="text-align: center;">Available Syrup Flavors</h1>
-      <h2 class="centered">French Vanilla</h2>
-      <h2 class="centered">Salted Vanilla</h2>
-      <h2 class="centered">Caramel</h2>
-      <h2 class="centered">Butter Pecan</h2>
-      <h2 class="centered">Chai</h2>
-      <h2 class="centered">Pumpkin Spice</h2>
-    </section>
-  
+                         <!-- Admin Menu List -->
+                        <div id="admin-menu-list" class="mt-8 max-h-64 overflow-y-auto pr-2">
+                             <!-- Admin items will be injected here -->
+                        </div>
+                    </div>
+                     <div class="bg-gray-100 p-4 text-right rounded-b-2xl">
+                         <button id="close-admin-panel-btn" class="bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, onSnapshot, addDoc, doc, updateDoc, deleteDoc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // --- FIREBASE CONFIGURATION ---
+        // IMPORTANT: Replace with your actual Firebase configuration
+        const firebaseConfig = {
+  apiKey: "AIzaSyBhbMmEoubIaTmCtrHS9kHEU5rikwjwU2g",
+  authDomain: "jordon-s-menu.firebaseapp.com",
+  databaseURL: "https://jordon-s-menu-default-rtdb.firebaseio.com",
+  projectId: "jordon-s-menu",
+  storageBucket: "jordon-s-menu.firebasestorage.app",
+  messagingSenderId: "855903041848",
+  appId: "1:855903041848:web:ddf8a74679f06e755a29cd",
+  measurementId: "G-8CYND7BTDW"
+};
+        
+        let app, auth, db;
+        
+        // --- INITIALIZATION ---
+        try {
+            app = initializeApp(firebaseConfig);
+            auth = getAuth(app);
+            db = getFirestore(app);
+            console.log("Firebase initialized successfully!");
+        } catch (error) {
+            console.error("Firebase initialization failed:", error);
+            alert("Could not connect to the database. Please check your Firebase configuration.");
+        }
+
+
+        // --- UI ELEMENTS ---
+        const menuItemsContainer = document.getElementById('menu-items');
+        const noItemsMessage = document.getElementById('no-items-message');
+        const adminPanel = document.getElementById('admin-panel');
+        const adminLoginBtn = document.getElementById('admin-login-btn');
+        const closeLoginBtn = document.getElementById('close-login-btn');
+        const closeAdminPanelBtn = document.getElementById('close-admin-panel-btn');
+        const loginView = document.getElementById('login-view');
+        const loggedinView = document.getElementById('loggedin-view');
+        const loginBtn = document.getElementById('login-btn');
+        const logoutBtn = document.getElementById('logout-btn');
+        const menuForm = document.getElementById('menu-form');
+        const formTitle = document.getElementById('form-title');
+        const adminMenuList = document.getElementById('admin-menu-list');
+        const cancelEditBtn = document.getElementById('cancel-edit-btn');
+        const loginError = document.getElementById('login-error');
+
+
+        // --- STATE ---
+        let currentMenuItems = [];
+
+        // --- RENDER FUNCTIONS ---
+        const renderMenuItemCard = (item) => {
+            const tagsHtml = item.tags.map(tag =>
+                `<span class="inline-block bg-amber-200 text-amber-800 text-sm font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full">${tag}</span>`
+            ).join('');
+
+            return `
+                <div class="flex flex-col p-6 bg-amber-50 rounded-xl shadow-md transition-transform hover:scale-105">
+                    <h3 class="text-2xl font-bold text-amber-900">${item.name}</h3>
+                    <p class="text-gray-600 mt-2 flex-grow">${item.description}</p>
+                    <div class="mt-4">
+                        ${tagsHtml}
+                    </div>
+                </div>
+            `;
+        };
+        
+        const renderAdminListItem = (item) => {
+             return `
+                <div class="flex items-center justify-between p-3 bg-gray-100 rounded-lg mb-2" data-id="${item.id}">
+                    <div>
+                        <p class="font-semibold text-gray-800">${item.name}</p>
+                    </div>
+                    <div class="space-x-2">
+                        <button class="edit-btn text-blue-600 hover:text-blue-800 font-semibold" data-id="${item.id}">Edit</button>
+                        <button class="delete-btn text-red-600 hover:text-red-800 font-semibold" data-id="${item.id}">Delete</button>
+                    </div>
+                </div>
+             `;
+        };
+
+        const updateMenuDisplay = () => {
+            if (!menuItemsContainer || !noItemsMessage) return;
+            if (currentMenuItems.length > 0) {
+                menuItemsContainer.innerHTML = currentMenuItems.map(renderMenuItemCard).join('');
+                menuItemsContainer.classList.remove('hidden');
+                noItemsMessage.classList.add('hidden');
+            } else {
+                menuItemsContainer.classList.add('hidden');
+                noItemsMessage.classList.remove('hidden');
+            }
+        };
+
+         const updateAdminList = () => {
+            if (!adminMenuList) return;
+             adminMenuList.innerHTML = currentMenuItems.map(renderAdminListItem).join('');
+        };
+
+
+        // --- DATABASE LOGIC ---
+        const getMenuItems = () => {
+             if (!db) return;
+            const menuCollection = collection(db, "coffee-menu");
+            onSnapshot(menuCollection, (snapshot) => {
+                currentMenuItems = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                updateMenuDisplay();
+                updateAdminList();
+            }, (error) => {
+                console.error("Error fetching menu items: ", error);
+            });
+        };
+
+        const addMenuItem = async (item) => {
+            if (!db) return;
+            try {
+                await addDoc(collection(db, "coffee-menu"), item);
+            } catch (error) {
+                console.error("Error adding document: ", error);
+            }
+        };
+
+        const updateMenuItem = async (id, item) => {
+             if (!db) return;
+            try {
+                const docRef = doc(db, "coffee-menu", id);
+                await updateDoc(docRef, item);
+            } catch (error) {
+                console.error("Error updating document: ", error);
+            }
+        };
+
+        const deleteMenuItem = async (id) => {
+             if (!db) return;
+            if (!confirm("Are you sure you want to delete this item?")) return;
+            try {
+                await deleteDoc(doc(db, "coffee-menu", id));
+            } catch (error) {
+                console.error("Error deleting document: ", error);
+            }
+        };
+
+        // --- AUTHENTICATION LOGIC ---
+        onAuthStateChanged(auth, user => {
+            if (user) {
+                // User is logged in
+                loginView.classList.add('hidden');
+                loggedinView.classList.remove('hidden');
+                adminLoginBtn.classList.add('hidden'); // Hide login button on main page
+            } else {
+                // User is logged out
+                loginView.classList.remove('hidden');
+                loggedinView.classList.add('hidden');
+                 adminLoginBtn.classList.remove('hidden'); // Show login button on main page
+            }
+        });
+
+        loginBtn.addEventListener('click', async () => {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            loginError.textContent = '';
+            try {
+                await signInWithEmailAndPassword(auth, email, password);
+            } catch (error) {
+                console.error("Login failed:", error.message);
+                loginError.textContent = "Login failed. Please check your credentials.";
+            }
+        });
+        
+        logoutBtn.addEventListener('click', async () => {
+            try {
+                 await signOut(auth);
+            } catch (error) {
+                console.error("Sign out failed:", error);
+            }
+        });
+
+        // --- EVENT LISTENERS & UI LOGIC ---
+        adminLoginBtn.addEventListener('click', () => adminPanel.classList.remove('hidden'));
+        closeLoginBtn.addEventListener('click', () => adminPanel.classList.add('hidden'));
+        closeAdminPanelBtn.addEventListener('click', () => {
+            adminPanel.classList.add('hidden');
+            resetForm();
+        });
+
+        menuForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const id = document.getElementById('edit-id').value;
+            const name = document.getElementById('coffee-name').value;
+            const description = document.getElementById('coffee-description').value;
+            const tagsRaw = document.getElementById('coffee-tags').value;
+            
+            const tags = tagsRaw.split(',').map(tag => tag.trim()).filter(tag => tag);
+
+            const menuItem = { name, description, tags };
+
+            if (id) {
+                await updateMenuItem(id, menuItem);
+            } else {
+                await addMenuItem(menuItem);
+            }
+            resetForm();
+        });
+        
+        const resetForm = () => {
+            menuForm.reset();
+            document.getElementById('edit-id').value = '';
+            formTitle.textContent = 'Add New Coffee';
+            cancelEditBtn.classList.add('hidden');
+        };
+
+        cancelEditBtn.addEventListener('click', resetForm);
+
+        adminMenuList.addEventListener('click', (e) => {
+            const id = e.target.dataset.id;
+            if (e.target.classList.contains('edit-btn')) {
+                const item = currentMenuItems.find(i => i.id === id);
+                if (item) {
+                    document.getElementById('edit-id').value = item.id;
+                    document.getElementById('coffee-name').value = item.name;
+                    document.getElementById('coffee-description').value = item.description;
+                    document.getElementById('coffee-tags').value = item.tags.join(', ');
+                    formTitle.textContent = 'Edit Coffee';
+                    cancelEditBtn.classList.remove('hidden');
+                }
+            }
+            if (e.target.classList.contains('delete-btn')) {
+                deleteMenuItem(id);
+            }
+        });
+
+        // --- Start the app ---
+        getMenuItems();
+    </script>
 </body>
 </html>
+
